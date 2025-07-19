@@ -3,19 +3,19 @@ import { MdAdd } from 'react-icons/md';
 
 
 function Form({ tasks, setTasks }) {
-    const [task, setTask] = useState('')
+    const [task, setTask] = useState({name: "", done: false})
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setTasks([...tasks, task])
-        setTask('')
+        setTask({name: "", done: false})
     }
     return (
         <form onSubmit={handleSubmit} className="flex gap-2 items-center">
             <input
                 type="text"
-                onChange={(e) => setTask(e.target.value)}
-                value={task} placeholder="Add a new task"
+                onChange={(e) => setTask({name: e.target.value, done: false})}
+                value={task.name} placeholder="Add a new task"
                 className="flex-1 px-4 py-2 text-gray-700 placeholder-gray-400 border-b-2 border-gray-200 w-md " />
             <button
                 type="submit"
