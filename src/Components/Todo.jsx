@@ -12,7 +12,7 @@ function Todo() {
         <h1 className='text-4xl md:text-5xl font-extrabold mb-8 text-blue-500 drop-shadow-sm tracking-tight'>Todo App</h1>
 
         <Form tasks={tasks} setTasks={setTasks} />
-        <Task tasks={tasks} />
+        <Task tasks={tasks} setTasks= {setTasks} />
 
 
       </div>
