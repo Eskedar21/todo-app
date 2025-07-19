@@ -19,12 +19,12 @@ function Taskslist({ item, id, tasks, setTasks }) {
         ) : (
           <MdCheckBoxOutlineBlank size={24} className="text-gray-400" />
         )}
-        <h2 className={`ml-2 ${item.done ? "line-through text-gray-400" : ""}`}>
+        <h2 className={`ml-2 ${item.done}? "line-through text-gray-400" : ""`}>
           {item.name}
         </h2>
 
       </span>
-      <button onClick={() => handleDelete(id)} className="text-blue-500 hover:text-blue-600 transition-all cursor-pointer">
+      <button onClick={() => handleDelete(id)} className="text-red-500 hover:text-red-600 transition-all cursor-pointer">
         <MdClose size={24} />
       </button>
     </div>

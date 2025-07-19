@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 
 import Form from './Form'
 import Task from './Task'
+import Footer from './Footer'
 
 function Todo() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState([]);
+  const completedTasks = tasks.filter((task) => task.done).length;
+  const remaningTasks = tasks.filter((task) => !task.done).length;
+  const totalTasks = tasks.length;
 
   return (
     <div className='flex items-center justify-center min-h-screen bg-gray-200'>
@@ -13,6 +17,7 @@ function Todo() {
 
         <Form tasks={tasks} setTasks={setTasks} />
         <Task tasks={tasks} setTasks= {setTasks} />
+        <Footer completedTasks = {completedTasks}  remaningTasks= {remaningTasks}   totalTasks = {totalTasks}/>
 
 
       </div>
